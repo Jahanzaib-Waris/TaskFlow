@@ -1,0 +1,735 @@
+TaskFlow - Complete Project Context
+Project Summary
+
+TaskFlow is a portfolio-quality full-stack web application built using the MERN Stack (MongoDB, Express.js, React, Node.js).
+
+The purpose of this project is not to become a production-ready project management platform, but rather to demonstrate a solid understanding of modern full-stack web development concepts to potential employers.
+
+The application should showcase:
+
+MERN architecture
+REST API development
+Authentication & Authorization
+MongoDB database modeling
+CRUD operations
+React component architecture
+State management
+Form validation
+Responsive UI
+Modern coding practices
+Clean project organization
+
+The application should be simple enough to complete quickly while still appearing polished and professionally structured.
+
+Primary Goal
+
+This project is intended to be used as a demonstration during interviews for entry-level MERN Stack or Full Stack Developer positions.
+
+The emphasis should be on:
+
+Clean architecture
+Readable code
+Proper folder organization
+Industry-standard practices
+Maintainability
+Scalability
+
+The goal is not to implement every possible feature.
+
+Project Name
+
+TaskFlow
+
+Application Type
+
+Single-user project management application.
+
+Each authenticated user owns their own projects and tasks.
+
+There is no team collaboration in the MVP.
+
+Projects are private.
+
+Tasks are private.
+
+No sharing between users.
+
+Target Audience
+
+Individuals who want to organize personal projects and tasks.
+
+Think of it as a lightweight version of:
+
+Trello
+Jira
+Asana
+ClickUp
+
+without collaboration features.
+
+Technology Stack
+Frontend
+
+React
+
+Vite
+
+React Router
+
+Axios
+
+React Hook Form
+
+Zod
+
+Tailwind CSS
+
+Context API
+
+React Icons
+
+Optional:
+
+React Hot Toast
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB
+
+Mongoose
+
+JWT Authentication
+
+bcrypt
+
+express-validator
+
+dotenv
+
+cors
+
+Database
+
+MongoDB Atlas
+
+Development Philosophy
+
+The project should prioritize:
+
+Simplicity
+Professional code quality
+Reusable components
+Clean UI
+Separation of concerns
+
+Avoid unnecessary abstractions.
+
+Avoid overengineering.
+
+Prefer readability over cleverness.
+
+Architecture
+
+Backend should follow:
+
+server/
+
+config/
+controllers/
+middleware/
+models/
+routes/
+validators/
+utils/
+
+server.js
+
+Frontend should follow:
+
+client/
+
+src/
+
+components/
+pages/
+layouts/
+hooks/
+context/
+services/
+utils/
+assets/
+
+App.jsx
+main.jsx
+Features
+Authentication
+Register
+
+Fields
+
+Name
+Email
+Password
+
+Requirements
+
+Password hashing
+JWT generation
+Validation
+Login
+
+Fields
+
+Email
+Password
+
+Return
+
+JWT
+
+Protected Routes
+
+Only authenticated users can access:
+
+Dashboard
+
+Projects
+
+Tasks
+
+Profile
+
+Logout
+
+Remove token from storage.
+
+Dashboard
+
+Displays
+
+Total Projects
+Total Tasks
+Completed Tasks
+Pending Tasks
+Recent Tasks (latest 5)
+
+No charts required for MVP.
+
+Simple dashboard cards.
+
+Projects
+
+CRUD
+
+Fields
+
+Title
+
+Description
+
+Created Date
+
+Owner
+
+Every project belongs to one user.
+
+Tasks
+
+CRUD
+
+Each task belongs to exactly one project.
+
+Fields
+
+Title
+
+Description
+
+Status
+
+Priority
+
+Due Date
+
+Created Date
+
+Status Enum
+
+Todo
+
+In Progress
+
+Completed
+
+Priority Enum
+
+Low
+
+Medium
+
+High
+
+Search
+
+Search tasks by title.
+
+Filters
+
+Filter tasks by
+
+Status
+
+Priority
+
+Project
+
+User Profile
+
+Allow user to update
+
+Name
+
+Email
+
+Password
+
+Bonus Features
+Dark Mode
+
+Requirements
+
+Theme Toggle
+
+Persist in Local Storage
+
+Context API
+
+Tailwind dark mode
+
+Form Validation
+
+Frontend
+
+React Hook Form
+
+Zod
+
+Backend
+
+express-validator
+
+All API inputs should be validated.
+
+Database Design
+User
+_id
+
+name
+
+email
+
+password
+
+createdAt
+
+updatedAt
+Project
+_id
+
+owner (ObjectId -> User)
+
+title
+
+description
+
+createdAt
+
+updatedAt
+Task
+_id
+
+project (ObjectId -> Project)
+
+title
+
+description
+
+status
+
+priority
+
+dueDate
+
+createdAt
+
+updatedAt
+Relationships
+
+One User
+
+↓
+
+Many Projects
+
+↓
+
+Many Tasks
+
+API Design
+Authentication
+
+POST
+
+/api/auth/register
+
+POST
+
+/api/auth/login
+
+GET
+
+/api/auth/me
+
+Projects
+
+GET
+
+/api/projects
+
+POST
+
+/api/projects
+
+PUT
+
+/api/projects/:id
+
+DELETE
+
+/api/projects/:id
+
+Tasks
+
+GET
+
+/api/tasks
+
+POST
+
+/api/tasks
+
+PUT
+
+/api/tasks/:id
+
+DELETE
+
+/api/tasks/:id
+
+Dashboard
+
+GET
+
+/api/dashboard
+
+Returns
+
+{
+totalProjects,
+totalTasks,
+completedTasks,
+pendingTasks,
+recentTasks
+}
+Profile
+
+PUT
+
+/api/users/profile
+
+PUT
+
+/api/users/password
+
+Authentication Flow
+
+Register
+
+↓
+
+Hash Password
+
+↓
+
+Store User
+
+↓
+
+Login
+
+↓
+
+Generate JWT
+
+↓
+
+Frontend stores JWT
+
+↓
+
+Axios sends Authorization header
+
+↓
+
+Protected APIs verify JWT
+
+UI Pages
+
+Public
+
+Login
+
+Register
+
+404
+
+Protected
+
+Dashboard
+
+Projects
+
+Project Details
+
+Tasks
+
+Profile
+
+Component Suggestions
+
+Navbar
+
+Sidebar
+
+Dashboard Cards
+
+Project Card
+
+Task Card
+
+Task Form
+
+Project Form
+
+Confirmation Modal
+
+Search Bar
+
+Filter Panel
+
+Loading Spinner
+
+Empty State
+
+Protected Route
+
+Theme Toggle
+
+UI Design
+
+Modern
+
+Minimal
+
+Professional
+
+Rounded corners
+
+Soft shadows
+
+Responsive
+
+Dashboard layout
+
+Sidebar navigation
+
+Top navigation
+
+Cards
+
+No glassmorphism.
+
+No neumorphism.
+
+No heavy animations.
+
+Use Tailwind utilities.
+
+Coding Standards
+
+Use functional React components.
+
+Use hooks.
+
+Avoid class components.
+
+Use async/await.
+
+Separate controllers from routes.
+
+Keep business logic out of routes.
+
+Use reusable utility functions.
+
+Centralize error handling.
+
+Use environment variables.
+
+No hardcoded secrets.
+
+Error Handling
+
+Backend
+
+Consistent JSON responses
+
+Example
+
+{
+success: false,
+message: "Project not found"
+}
+
+Frontend
+
+Toast notifications
+
+Loading states
+
+Friendly error messages
+
+Security
+
+Hash passwords using bcrypt.
+
+JWT authentication.
+
+Protect all authenticated routes.
+
+Validate every request.
+
+Sanitize user inputs.
+
+Never expose passwords.
+
+Non Functional Requirements
+
+Responsive layout.
+
+Clean folder structure.
+
+Reusable components.
+
+Readable code.
+
+Maintainable architecture.
+
+Reasonable performance.
+
+Out of Scope
+
+Do NOT implement:
+
+Real-time collaboration
+
+WebSockets
+
+Notifications
+
+Email verification
+
+Password reset
+
+Drag-and-drop Kanban
+
+File uploads
+
+Comments
+
+Activity log
+
+Admin panel
+
+Role-based permissions
+
+Calendar
+
+Labels
+
+Tags
+
+Project sharing
+
+Multi-user collaboration
+
+Third-party integrations
+
+Payment systems
+
+Analytics
+
+MVP Priority Order
+
+Phase 1
+
+Project setup
+Express server
+MongoDB connection
+React setup
+Authentication
+
+Phase 2
+
+Projects CRUD
+
+Phase 3
+
+Tasks CRUD
+
+Phase 4
+
+Dashboard
+
+Phase 5
+
+Search & Filters
+
+Phase 6
+
+Profile
+
+Phase 7
+
+Dark Mode
+
+Phase 8
+
+Form Validation
+
+Expected Outcome
+
+The finished application should look like a professional portfolio project that demonstrates competency in MERN stack development. It should be easy to explain during interviews, with clear separation of frontend and backend responsibilities, proper RESTful API design, secure authentication, and clean, maintainable code. The emphasis is on quality over quantity—implement the MVP completely rather than partially implementing advanced features.
+
+Additional Instructions for the MCP Agent
+Generate production-quality, readable code with meaningful naming conventions.
+Keep components small and reusable.
+Use consistent formatting and folder organization.
+Include comments only where they improve understanding; avoid excessive commenting.
+Prefer reusable custom hooks and utility functions over duplicated logic.
+Build incrementally so the application remains runnable after each major feature.
+Follow REST conventions and return consistent JSON responses.
+Assume this is a portfolio project intended to showcase good engineering practices, not an enterprise application.
