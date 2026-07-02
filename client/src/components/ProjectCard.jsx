@@ -4,11 +4,11 @@ const ProjectCard = ({ project, onEdit, onDelete }) => {
   const createdDate = new Date(project.createdAt).toLocaleDateString();
 
   return (
-    <div className="flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+    <div className="flex flex-col justify-between rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-violet-900/40 dark:bg-[#12121c]">
       <div>
         <Link
           to={`/projects/${project._id}`}
-          className="text-lg font-semibold text-gray-900 hover:text-purple-600 dark:text-gray-100 dark:hover:text-purple-400"
+          className="text-lg font-semibold text-gray-900 hover:text-violet-600 dark:text-gray-100 dark:hover:text-violet-400"
         >
           {project.title}
         </Link>
@@ -25,7 +25,7 @@ const ProjectCard = ({ project, onEdit, onDelete }) => {
       <div className="mt-4 flex gap-3">
         <button
           onClick={() => onEdit(project)}
-          className="text-sm font-medium text-purple-600 hover:underline"
+          className="text-sm font-medium text-violet-600 hover:underline"
         >
           Edit
         </button>

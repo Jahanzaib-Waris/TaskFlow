@@ -44,7 +44,7 @@ const Profile = () => {
     <div className="mx-auto max-w-lg">
       <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Profile</h1>
 
-      <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
+      <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-6 dark:border-violet-900/40 dark:bg-[#12121c]">
         <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
           Account details
         </h2>
@@ -66,14 +66,14 @@ const Profile = () => {
           <button
             type="submit"
             disabled={profileForm.formState.isSubmitting}
-            className="self-start rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-700 disabled:opacity-60"
+            className="self-start rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:from-violet-500 hover:to-purple-500 disabled:opacity-60"
           >
             {profileForm.formState.isSubmitting ? "Saving..." : "Save changes"}
           </button>
         </form>
       </div>
 
-      <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
+      <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-6 dark:border-violet-900/40 dark:bg-[#12121c]">
         <h2 className="mb-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
           Change password
         </h2>
@@ -102,7 +102,7 @@ const Profile = () => {
           <button
             type="submit"
             disabled={passwordForm.formState.isSubmitting}
-            className="self-start rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-700 disabled:opacity-60"
+            className="self-start rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:from-violet-500 hover:to-purple-500 disabled:opacity-60"
           >
             {passwordForm.formState.isSubmitting ? "Updating..." : "Update password"}
           </button>

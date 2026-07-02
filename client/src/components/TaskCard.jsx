@@ -12,7 +12,7 @@ const priorityStyles = {
 
 const TaskCard = ({ task, onEdit, onDelete }) => {
   return (
-    <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
+    <div className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 dark:border-violet-900/40 dark:bg-[#12121c]">
       <div>
         <h4 className="font-medium text-gray-900 dark:text-gray-100">{task.title}</h4>
         {task.description && (
@@ -36,7 +36,7 @@ const TaskCard = ({ task, onEdit, onDelete }) => {
       <div className="flex shrink-0 gap-3">
         <button
           onClick={() => onEdit(task)}
-          className="text-sm font-medium text-purple-600 hover:underline"
+          className="text-sm font-medium text-violet-600 hover:underline"
         >
           Edit
         </button>

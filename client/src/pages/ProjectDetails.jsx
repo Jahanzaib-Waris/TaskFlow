@@ -115,7 +115,7 @@ const ProjectDetails = () => {
 
   return (
     <div>
-      <Link to="/projects" className="text-sm font-medium text-purple-600 hover:underline">
+      <Link to="/projects" className="text-sm font-medium text-violet-600 hover:underline">
         ← Back to Projects
       </Link>
 
@@ -130,7 +130,7 @@ const ProjectDetails = () => {
         </div>
         <button
           onClick={openCreateForm}
-          className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-700"
+          className="rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:from-violet-500 hover:to-purple-500"
         >
           New Task
         </button>

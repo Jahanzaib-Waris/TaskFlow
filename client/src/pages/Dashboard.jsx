@@ -53,7 +53,7 @@ const Dashboard = () => {
             <Link
               key={task._id}
               to={`/projects/${task.project._id}`}
-              className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 transition hover:border-purple-300 dark:border-gray-800 dark:bg-gray-900"
+              className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 transition hover:border-violet-300 dark:border-violet-900/40 dark:bg-[#12121c]"
             >
               <div>
                 <p className="font-medium text-gray-900 dark:text-gray-100">{task.title}</p>

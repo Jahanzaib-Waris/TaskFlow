@@ -32,7 +32,7 @@ const ProjectForm = ({ project, onSubmit, onClose }) => {
           </label>
           <textarea
             rows={3}
-            className="rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-purple-400 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm outline-none transition focus:ring-2 focus:ring-violet-400 dark:border-violet-900/50 dark:bg-[#12121c] dark:text-gray-100"
             {...register("description")}
           />
         </div>
@@ -41,14 +41,14 @@ const ProjectForm = ({ project, onSubmit, onClose }) => {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+            className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:border-violet-900/50 dark:text-gray-300 dark:hover:bg-violet-500/10"
           >
             Cancel
           </button>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-700 disabled:opacity-60"
+            className="rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 text-sm font-medium text-white transition hover:from-violet-500 hover:to-purple-500 disabled:opacity-60"
           >
             {isSubmitting ? "Saving..." : "Save"}
           </button>
