@@ -1,7 +1,10 @@
 import api from "./api";
 
 const getTasks = async (params = {}) => {
-  const { data } = await api.get("/tasks", { params });
+  const cleanParams = Object.fromEntries(
+    Object.entries(params).filter(([, value]) => Boolean(value))
+  );
+  const { data } = await api.get("/tasks", { params: cleanParams });
   return data.data;
 };
 

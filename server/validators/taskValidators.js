@@ -1,9 +1,15 @@
 import { body, query } from "express-validator";
 
 const getTasksValidator = [
-  query("project").optional().isMongoId().withMessage("Invalid project id"),
-  query("status").optional().isIn(["Todo", "In Progress", "Completed"]).withMessage("Invalid status"),
-  query("priority").optional().isIn(["Low", "Medium", "High"]).withMessage("Invalid priority"),
+  query("project").optional({ values: "falsy" }).isMongoId().withMessage("Invalid project id"),
+  query("status")
+    .optional({ values: "falsy" })
+    .isIn(["Todo", "In Progress", "Completed"])
+    .withMessage("Invalid status"),
+  query("priority")
+    .optional({ values: "falsy" })
+    .isIn(["Low", "Medium", "High"])
+    .withMessage("Invalid priority"),
 ];
 
 const createTaskValidator = [
